@@ -23,12 +23,12 @@ public class Programa {
     System.out.println("");
 
     // Popular vetores
-    Produto p1 = new Produto(1, "Agua", 2.00, 20);
-    Produto p2 = new Produto(2, "Refrigerante", 3.50, 25);
-    Produto p3 = new Produto(3, "Vinho", 15.00, 10);
-    produtos.add(p1);
-    produtos.add(p2);
-    produtos.add(p3);
+    // Produto p1 = new Produto(1, "Agua", 2.00, 20);
+    // Produto p2 = new Produto(2, "Refrigerante", 3.50, 25);
+    // Produto p3 = new Produto(3, "Vinho", 15.00, 10);
+    // produtos.add(p1);
+    // produtos.add(p2);
+    // produtos.add(p3);
 
     do {
       System.out.println();
@@ -55,7 +55,7 @@ public class Programa {
           String nome = in.nextLine();
           System.out.println("Digite o valor inicial: ");
           Double valor = in.nextDouble();
-          System.out.println("Digeite o saldo inicial em estoque: ");
+          System.out.println("Digite o saldo inicial em estoque: ");
           int saldo = in.nextInt();
 
           Produto prod = new Produto(codigo, nome, valor, saldo);
@@ -113,28 +113,28 @@ public class Programa {
 
           System.out.println("Informe a quantidade: ");
           qtdProdVenda = in4.nextInt();
-          Produto pv1 = new Produto(1, "Produto A", 2.50, 10);
-          Produto pv2 = new Produto(2, "Produto B", 2.00, 12);
-          Produto pv3 = new Produto(3, "Produto A", 1.50, 20);
-          String dt1 = "01/10/2000";
-          String dt2 = "01/05/2010";
-          String dt3 = "31/12/2030";
-          SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+          // Produto pv1 = new Produto(1, "Produto A", 2.50, 10);
+          // Produto pv2 = new Produto(2, "Produto B", 2.00, 12);
+          // Produto pv3 = new Produto(3, "Produto A", 1.50, 20);
+          // String dt1 = "01/10/2000";
+          // String dt2 = "01/05/2010";
+          // String dt3 = "31/12/2030";
+          // SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-          try {
-            Date d1 = sdf.parse(dt1);
-            Date d2 = sdf.parse(dt2);
-            Date d3 = sdf.parse(dt3);
-            Venda v1 = new Venda(d1, pv1, 1);
-            Venda v2 = new Venda(d2, pv2, 3);
-            Venda v3 = new Venda(d3, pv3, 2);
-            vendas.add(v1);
-            vendas.add(v2);
-            vendas.add(v3);
-          } catch (ParseException e) {
-            System.out.println("Erro: " + e.getMessage());
-            e.printStackTrace();
-          }
+          // try {
+          // Date d1 = sdf.parse(dt1);
+          // Date d2 = sdf.parse(dt2);
+          // Date d3 = sdf.parse(dt3);
+          // Venda v1 = new Venda(d1, pv1, 1);
+          // Venda v2 = new Venda(d2, pv2, 3);
+          // Venda v3 = new Venda(d3, pv3, 2);
+          // vendas.add(v1);
+          // vendas.add(v2);
+          // vendas.add(v3);
+          // } catch (ParseException e) {
+          // System.out.println("Erro: " + e.getMessage());
+          // e.printStackTrace();
+          // }
 
           for (Produto p : produtos) {
             if (p.getCodigo() == codProdVenda) {
@@ -171,10 +171,7 @@ public class Programa {
                     + v.getQuantidade() + "\nValor: " + v.getValor() * v.getQuantidade() + "\n"));
             System.out.println("-------------------------");
             System.out.println();
-            // Optional<Venda> vendaPorPeriodo = vendas.stream()
-            // .reduce((c1, c2) -> c1.getValor() > c2.getValor() ? c1 : c2);
-            // System.out.println("Soma: " + vendaPorPeriodo);
-            System.out.println("dtInicialFormatted: " + dtInicialFormatted);
+
           } catch (Exception e) {
             // System.out.println("Erro: " + e.getMessage());
           }
