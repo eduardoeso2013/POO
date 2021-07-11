@@ -40,7 +40,6 @@ public class Programa {
       System.out.println("3 - Listagem de produtos");
       System.out.println("4 - Realizar venda");
       System.out.println("5 - Vendas por periodo - detalhado");
-      System.out.println("6 - Compras");
       System.out.println("0 - Sair");
       System.out.println();
 
@@ -140,7 +139,7 @@ public class Programa {
           for (Produto p : produtos) {
             if (p.getCodigo() == codProdVenda) {
               if (p.getEstoque() >= qtdProdVenda) {
-                Venda venda = new Venda(dtVenda, p, qtdProdVenda);
+                Venda venda = new Venda(data, p, qtdProdVenda);
                 vendas.add(venda);
                 System.out.println("Venda efetivada!");
               } else if (p.getEstoque() < qtdProdVenda) {
@@ -170,12 +169,15 @@ public class Programa {
                 .forEach(v -> System.out.println("Nr.Venda: " + (vendas.indexOf(v) + 1) + "\nData: "
                     + v.getDataFormatted() + "\nCodigo do Produto: " + v.getCdProdVenda() + "\nQuantidade: "
                     + v.getQuantidade() + "\nValor: " + v.getValor() * v.getQuantidade() + "\n"));
-            System.out.println("------------------");
+            System.out.println("-------------------------");
             System.out.println();
+            // Optional<Venda> vendaPorPeriodo = vendas.stream()
+            // .reduce((c1, c2) -> c1.getValor() > c2.getValor() ? c1 : c2);
+            // System.out.println("Soma: " + vendaPorPeriodo);
+            System.out.println("dtInicialFormatted: " + dtInicialFormatted);
           } catch (Exception e) {
             // System.out.println("Erro: " + e.getMessage());
           }
-          // vendas.stream().reduce(accumulator)
 
           break;
         case 6:
