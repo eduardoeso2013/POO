@@ -165,22 +165,22 @@ public class Programa {
           try {
             Date dtInicialFormatted = sdf5.parse(dtInicial);
             Date dtFinalFormatted = sdf5.parse(dtFinal);
-            System.out.println("dtInicialFormatted: " + dtInicialFormatted);
-            vendas.stream()// .filter(v -> v.getData().after(dtInicialFormatted))// &&
-                           // v.getData().before(dtFinalFormatted))
-                .forEach(v -> System.out.println("Nr.Venda: " + (vendas.indexOf(v) + 1) + "\nData: " + v.getData()
-                    + "\nCodigo do Produto: " + v.getCdProdVenda() + "\nQuantidade: " + v.getQuantidade() + "\nValor: "
-                    + v.getValor() * v.getQuantidade() + "\n"));
+            System.out.println("-------------------------");
+            vendas.stream().filter(v -> v.getData().after(dtInicialFormatted) && v.getData().before(dtFinalFormatted))
+                .forEach(v -> System.out.println("Nr.Venda: " + (vendas.indexOf(v) + 1) + "\nData: "
+                    + v.getDataFormatted() + "\nCodigo do Produto: " + v.getCdProdVenda() + "\nQuantidade: "
+                    + v.getQuantidade() + "\nValor: " + v.getValor() * v.getQuantidade() + "\n"));
             System.out.println("------------------");
             System.out.println();
           } catch (Exception e) {
-            System.out.println("Erro: " + e.getMessage());
+            // System.out.println("Erro: " + e.getMessage());
           }
+          // vendas.stream().reduce(accumulator)
 
           break;
         case 6:
           // System.out.println("Opção 6: ");
-        case 0:
+        case 0: // Sair
           // System.out.println("Opção 0: ");
           break;
         default:

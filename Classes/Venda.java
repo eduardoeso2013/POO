@@ -67,4 +67,5 @@ public class Venda {
   public Double getValor() {
     return produto.getValor();
   }
+
 }
